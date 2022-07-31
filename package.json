@@ -1,0 +1,11 @@
+{
+  "name": "cypress-light-theme",
+  "version": "0.1.0",
+  "description": "A light theme for the Cypress App Command Log",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
