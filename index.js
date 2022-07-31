@@ -1,10 +1,18 @@
-// remove the old one and start fresh for easier development
-window.top?.document.getElementById('light-mode-reporter')?.remove()
+"use strict";
 
-const styleEl = document.createElement('style')
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = _default;
 
-styleEl.id = 'light-mode-reporter'
-styleEl.innerHTML = `
+function _default() {
+  var _window$top, _window$top$document$, _window$top2, _window$top2$document;
+
+  // remove the old one and start fresh for easier development
+  (_window$top = window.top) === null || _window$top === void 0 ? void 0 : (_window$top$document$ = _window$top.document.getElementById('light-mode-reporter')) === null || _window$top$document$ === void 0 ? void 0 : _window$top$document$.remove();
+  const styleEl = document.createElement('style');
+  styleEl.id = 'light-mode-reporter';
+  styleEl.innerHTML = `
   
 .reporter {
     border-right: 1px solid #ddd;
@@ -210,6 +218,6 @@ styleEl.innerHTML = `
     border-color: #2f3ab0!important;
   }
 
-`
-
-window.top?.document.querySelector('body')?.appendChild(styleEl)
+`;
+  (_window$top2 = window.top) === null || _window$top2 === void 0 ? void 0 : (_window$top2$document = _window$top2.document.querySelector('body')) === null || _window$top2$document === void 0 ? void 0 : _window$top2$document.appendChild(styleEl);
+}
