@@ -1,165 +1,173 @@
-const STYLE_EL_ID = 'light-mode-reporter-styles'
+const STYLE_EL_ID = "light-mode-reporter-styles"
 
-function addStyleEL () {
-  const styleEl = document.createElement('style')
+function addStyleEL() {
+  const styleEl = document.createElement("style")
 
   styleEl.id = STYLE_EL_ID
   styleEl.innerHTML = `
-    
+
     .reporter {
-      border-right: 1px solid #ddd;
+      border-right: 1px solid #e1e3ed;
     }
-  
+
     .reporter header,
-    .reporter .container, 
+    .reporter .container,
     .reporter .runnable-header,
     .reporter .commands-container,
     .reporter .command-wrapper,
     .reporter .runnable {
-      background-color: #fbfbfb
+      background-color: #f8f9ff
     }
-  
+
     .reporter *:not(button):not([class*=command-state]):not(.runnable-err):not(.test-err-code-frame *) {
-      color: #444
+      color: #2e3247
     }
-  
+
     .reporter .no-tests {
-      background-color: #efefef
+      background-color: #f3f4fa
     }
-    
+
     .reporter .wrap {
       border-color: #e1e3ed !important
     }
-  
+
     .reporter .runnable-title,
     .reporter strong,
      .reporter .stats li .num, {
-      color: #555 !important
+      color: #434861 !important
     }
-  
+
     .reporter .command-name-assert .command-state-passed .command-message strong {
-      color: #047b4a !important;
+      color: #00814d !important;
     }
 
     .reporter .command-state-passed,
-    .reporter .runnable.runnable-passed > div > .runnable-wrapper, 
+    .reporter .runnable.runnable-passed > div > .runnable-wrapper,
     .reporter .runnable.runnable-passed > div > .runnable-instruments {
-      border-color: #047b4a !important;
+      border-color: #00814d !important;
     }
-  
+
     .reporter .command-name-assert .command-state-failed .command-message strong {
       color: #cf0000 !important
     }
-    .reporter .command-wrapper .command-alias.agent, 
-    .reporter .command-wrapper .command-alias.primitive, 
-    .reporter .command-wrapper .command-interceptions.agent, 
+    .reporter .command-wrapper .command-alias.agent,
+    .reporter .command-wrapper .command-alias.primitive,
+    .reporter .command-wrapper .command-interceptions.agent,
     .reporter .command-wrapper .command-interceptions.primitive {
-      background-color: #ddf1ff;
+      background-color: #f0f1ff;
     }
-    
+
     .reporter .command-name-assert .command-state-pending .command-message strong {
-      color: #8490f6 !important
+      color: #9aa2fc !important
     }
-  
+
     .reporter .runnable-header .icon-light {
-      fill: #fcfcfc
+      fill: #f3f4fa
     }
-  
+
     .reporter .runnable-header .icon-dark {
-      stroke: #bbb
+      stroke: #bfc2d4
     }
-  
+
     .reporter .runnable-header:before,
     .reporter .runnable-header:after {
       background-color: #e1e3ed !important
     }
-  
+
     .reporter .command-name-assert .command-state-passed .command-method span {
-      background-color: #d5edd6 !important
+      background-color: #c2f1de !important
     }
-  
+
     .reporter .collapsible-content *:not(.test-err-code-frame *) {
-      color: #555555 !important
+      color: #434861 !important
     }
-  
+
     .reporter .collapsible-content .runnable-err {
-      background-color: #fff4f4 !important
+      background-color: #fbeff1 !important
     }
-  
+
     .reporter .command-name-assert .command-state-failed .command-method span {
-      background-color: #f7d3d3 !important
+      background-color: #fad9df !important
     }
-  
+
     .reporter .command-wrapper .command-alias.dom, .reporter .command-wrapper .command-interceptions.dom,
-    .reporter .command-name-assert .command-state-pending .command-method span  {
-      background-color: #e3e6ff;
+    .reporter .command-name-assert .command-state-pending .command-method span {
+      background-color: #f0f1ff;
   }
-  
+
   .reporter .num-children, .reporter .num-elements {
-    background-color: #efefef
+    background-color: #f3f4fa
   }
-  
+
   .reporter .command-wrapper.command-is-interactive:hover,
   .reporter button:hover,
   .reporter .collapsible-header-inner:hover,
   .reporter .hooks-container .hook-header:hover {
-    background-color: #eeeeee !important;
+    background-color: #f3f4fa !important;
     cursor: pointer;
   }
-  
+
+  .reporter .runnable-err .collapsible-header-inner:hover {
+    background-color: #fad9df!important
+  }
+
+  .reporter .runnable-err-stack-expander .collapsible-header:hover .collapsible-indicator .icon-dark {
+    stroke: #9f1331
+  }
+
   .reporter .instruments-container .instrument-content {
     background-color: white
   }
-  
+
   .reporter .command-pin {
-    color: #ddd !important
+    color: #e1e3ed !important
   }
-  
+
   .reporter .no-commands {
-    background-color: #eee
+    background-color: #f3f4fa
   }
-  
+
   .reporter .stats,
   .reporter .controls,
   .reporter .controls button,
   .reporter .runnable-header .duration {
-   border-color: #ccc !important
+    border-color: #d0d2e0 !important
   }
-  
+
   #unified-reporter .toggle-specs-wrapper * {
     color: #434861 !important
   }
-  
+
   .reporter .runnable.suite > div > .runnable-wrapper .runnable-title {
     color: #434861 !important
   }
-  
+
   .reporter .command-pin {
     position: relative;
     top: 3px;
   }
-  
+
   .reporter .command-pin path.icon-light {
-    fill: #eee !important;
+    fill: #f3f4fa !important;
     position: relative;
     top: 3px;
   }
 
   #cypress-theme-toggle {
-    border: 1px solid #ccc;
+    border: 1px solid #d0d2e0;
     border-radius: 6px;
     height: 24px;
     padding: 0 6px;
     line-height: 0;
-    color: #666
+    color: #5a5f7a
   }
 
-  
-   
+
+
   [data-cy=specs-list-panel] .bg-gray-1000 {
-      background-color: #fbfbfb!important;
+      background-color: #f8f9ff!important;
     }
-  
+
   [data-cy=specs-list-panel] .text-gray-1000 {
       color: white!important;
     }
@@ -193,14 +201,14 @@ function addStyleEL () {
   [data-cy=specs-list-panel] .text-gray-50 {
       color: #1b1e2e!important;
     }
-  
+
   [data-cy=specs-list-panel] .text-white {
       color: black!important;
     }
   [data-cy=specs-list-panel] .text-black {
       color: white!important;
     }
-  
+
   [data-cy=specs-list-panel] svg {
       filter: invert(100%) hue-rotate(180deg);
     }
@@ -228,32 +236,37 @@ function addStyleEL () {
   [data-cy=specs-list-panel] .before\\:hover\\:border-r-indigo-300:hover::before {
       border-color: #2f3ab0!important;
     }
-  
+
   `
 
-  top.document.querySelector('body').appendChild(styleEl)
+  top.document.querySelector("body").appendChild(styleEl)
 }
 
-export default function setLightTheme (isLight = undefined) {
-  if (!top.document.getElementById('cypress-theme-toggle')) {
-    const button = document.createElement('button')
+export default function setLightTheme(isLight = undefined) {
+  if (!top.document.getElementById("cypress-theme-toggle")) {
+    const button = document.createElement("button")
     button.id = "cypress-theme-toggle"
 
-    button.addEventListener('click', () => setLightTheme(top.localStorage.getItem('theme') === 'dark'))
-    top.document.querySelector('.reporter .spacer').appendChild(button)
+    button.addEventListener("click", () =>
+      setLightTheme(top.localStorage.getItem("theme") === "dark")
+    )
+    top.document.querySelector(".reporter .spacer").appendChild(button)
   }
 
-  if (isLight || (isLight === undefined && !top?.localStorage.getItem('theme'))) {
-    top.localStorage.setItem('theme', 'light')
+  if (
+    isLight ||
+    (isLight === undefined && !top?.localStorage.getItem("theme"))
+  ) {
+    top.localStorage.setItem("theme", "light")
   } else if (isLight === false) {
-    top.localStorage.setItem('theme', 'dark')
+    top.localStorage.setItem("theme", "dark")
   }
 
-  if (top.localStorage.getItem('theme') === 'light') {
+  if (top.localStorage.getItem("theme") === "light") {
     addStyleEL()
-    top.document.getElementById('cypress-theme-toggle').innerText = 'Dark'
+    top.document.getElementById("cypress-theme-toggle").innerText = "Dark"
   } else if (top.document.getElementById(STYLE_EL_ID)) {
     top.document.getElementById(STYLE_EL_ID).remove()
-    top.document.getElementById('cypress-theme-toggle').innerText = 'Light'
+    top.document.getElementById("cypress-theme-toggle").innerText = "Light"
   }
 }
