@@ -1,4 +1,3 @@
-
 const STYLE_EL_ID = 'light-mode-reporter-styles'
 
 function addStyleEL () {
