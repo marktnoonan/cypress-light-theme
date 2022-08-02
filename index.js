@@ -10,13 +10,20 @@ function addStyleEL() {
       border-right: 1px solid #e1e3ed;
     }
 
+    .reporter,
     .reporter header,
     .reporter .container,
     .reporter .runnable-header,
     .reporter .commands-container,
     .reporter .command-wrapper,
-    .reporter .runnable {
+    .reporter .runnable,
+    .reporter .testing-preferences-header {
       background-color: #f8f9ff
+    }
+
+    .reporter header button:hover,
+    .reporter .controls .testing-preferences-toggle.open {
+      background-color: #e1e3ed
     }
 
     .reporter *:not(button):not([class*=command-state]):not(.runnable-err):not(.test-err-code-frame *) {
