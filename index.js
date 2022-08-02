@@ -7,7 +7,7 @@ function addStyleEL() {
   styleEl.innerHTML = `
 
     .reporter {
-      border-right: 1px solid #e1e3ed;
+      border-right: 1px solid #e1e3ed
     }
 
     .reporter,
@@ -40,18 +40,18 @@ function addStyleEL() {
 
     .reporter .runnable-title,
     .reporter strong,
-     .reporter .stats li .num, {
+    .reporter .stats li .num, {
       color: #434861 !important
     }
 
     .reporter .command-name-assert .command-state-passed .command-message strong {
-      color: #00814d !important;
+      color: #00814d !important
     }
 
     .reporter .command-state-passed,
     .reporter .runnable.runnable-passed > div > .runnable-wrapper,
     .reporter .runnable.runnable-passed > div > .runnable-instruments {
-      border-color: #00814d !important;
+      border-color: #00814d !important
     }
 
     .reporter .command-name-assert .command-state-failed .command-message strong {
@@ -61,7 +61,7 @@ function addStyleEL() {
     .reporter .command-wrapper .command-alias.primitive,
     .reporter .command-wrapper .command-interceptions.agent,
     .reporter .command-wrapper .command-interceptions.primitive {
-      background-color: #f0f1ff;
+      background-color: #f0f1ff
     }
 
     .reporter .command-name-assert .command-state-pending .command-message strong {
@@ -99,7 +99,7 @@ function addStyleEL() {
 
     .reporter .command-wrapper .command-alias.dom, .reporter .command-wrapper .command-interceptions.dom,
     .reporter .command-name-assert .command-state-pending .command-method span {
-      background-color: #f0f1ff;
+      background-color: #f0f1ff
   }
 
   .reporter .num-children, .reporter .num-elements {
@@ -111,11 +111,11 @@ function addStyleEL() {
   .reporter .collapsible-header-inner:hover,
   .reporter .hooks-container .hook-header:hover {
     background-color: #f3f4fa !important;
-    cursor: pointer;
+    cursor: pointer
   }
 
   .reporter .runnable-err .collapsible-header-inner:hover {
-    background-color: #fad9df!important
+    background-color: #fad9df !important
   }
 
   .reporter .runnable-err-stack-expander .collapsible-header:hover .collapsible-indicator .icon-dark {
@@ -151,13 +151,13 @@ function addStyleEL() {
 
   .reporter .command-pin {
     position: relative;
-    top: 3px;
+    top: 3px
   }
 
   .reporter .command-pin path.icon-light {
     fill: #f3f4fa !important;
     position: relative;
-    top: 3px;
+    top: 3px
   }
 
   .reporter .test-err-code-frame {
@@ -232,7 +232,7 @@ function addStyleEL() {
   }
 
   .line-highlight {
-    background: linear-gradient(to right, rgba(46, 50, 71, .1) 100%, rgba(46, 50, 71, 0));
+    background: linear-gradient(to right, rgba(46, 50, 71, .1) 100%, rgba(46, 50, 71, 0))
   }
 
   .runnable-err a {
@@ -259,78 +259,78 @@ function addStyleEL() {
 
 
   [data-cy=specs-list-panel] .bg-gray-1000 {
-      background-color: #f8f9ff!important;
-    }
+    background-color: #f8f9ff !important
+  }
 
   [data-cy=specs-list-panel] .text-gray-1000 {
-      color: white!important;
-    }
+    color: white !important
+  }
   [data-cy=specs-list-panel] .text-gray-900 {
-      color: #e1e3ed!important;
-    }
+    color: #e1e3ed !important
+  }
   [data-cy=specs-list-panel] .text-gray-800 {
-      color: #d0d2e0!important;
-    }
+    color: #d0d2e0 !important
+  }
   [data-cy=specs-list-panel] .text-gray-700 {
-      color: #5a5f7a!important;
-    }
+    color: #5a5f7a !important
+  }
   [data-cy=specs-list-panel] .text-gray-600 {
-      color: #747994!important;
-    }
+    color: #747994 !important
+  }
   [data-cy=specs-list-panel] .text-gray-500 {
-      color: #434861!important;
-    }
+    color: #434861 !important
+  }
   [data-cy=specs-list-panel] .text-gray-400 {
-      color: #434861!important;
-    }
+    color: #434861 !important
+  }
   [data-cy=specs-list-panel] .text-gray-300 {
-      color: #2e3247!important;
-    }
+    color: #2e3247 !important
+  }
   [data-cy=specs-list-panel] .text-gray-200 {
-      color: #2e3247!important;
-    }
+    color: #2e3247 !important
+  }
   [data-cy=specs-list-panel] .text-gray-100 {
-      color: #1b1e2e!important;
-    }
+    color: #1b1e2e !important
+  }
   [data-cy=specs-list-panel] .text-gray-50 {
-      color: #1b1e2e!important;
-    }
+    color: #1b1e2e !important
+  }
 
   [data-cy=specs-list-panel] .text-white {
-      color: black!important;
-    }
+    color: black !important
+  }
   [data-cy=specs-list-panel] .text-black {
-      color: white!important;
-    }
+    color: white !important
+  }
 
   [data-cy=specs-list-panel] svg {
-      filter: invert(100%) hue-rotate(180deg);
-    }
+    filter: invert(100%) hue-rotate(180deg);
+  }
   [data-cy=specs-list-panel] .bg-gradient-to-b {
-      display: none;
-    }
+    display: none;
+  }
   [data-cy=specs-list-panel] .focus-visible\\:bg-gray-900:focus-visible {
-      background-color: #e1e3ed !important;
-    }
+    background-color: #e1e3ed !important
+  }
   [data-cy=specs-list-panel] .border-gray-900 {
-      border-color: #e1e3ed!important;
-    }
+    border-color: #e1e3ed !important
+  }
   [data-cy=specs-list-panel] .force-dark,
   #unified-reporter.force-dark {
-      color-scheme: light;
-    }
+    color-scheme: light;
+  }
   [data-cy=specs-list-panel] .group:hover .group-hover\\:text-indigo-300 {
-      color: #2f3ab0!important;
-    }
+    color: #2f3ab0!important
+  }
   [data-cy=specs-list-panel] .group:focus .group-focus\\:text-indigo-300 {
-      color: #2f3ab0!important;
-    }
+    color: #2f3ab0!important
+  }
   [data-cy=specs-list-panel] .before\\:border-r-indigo-300::before {
-      border-color: #2f3ab0!important;
-    }
+    border-color: #2f3ab0!important
+  }
   [data-cy=specs-list-panel] .before\\:hover\\:border-r-indigo-300:hover::before {
-      border-color: #2f3ab0!important;
-    }
+    border-color: #2f3ab0!important
+  }
 
   `
 
