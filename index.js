@@ -153,6 +153,93 @@ function addStyleEL() {
     top: 3px;
   }
 
+  .reporter .test-err-code-frame {
+    background-color: #f3f4fa
+  }
+
+  .reporter .test-err-code-frame .runnable-err-file-path {
+    background-color: rgba(225, 227, 237, 0.5)
+  }
+
+  :not(pre) > code[class*=language-], pre[class*=language-] {
+    background-color: #f3f4fa
+  }
+
+  code[class*="language-"],
+  pre[class*="language-"] {
+    color: #747994;
+    margin: 0;
+    text-shadow: white 0px 1px
+  }
+
+  :not(pre) > code[class*="language-"],
+  pre[class*="language-"] {
+    background: #f3f4fa
+  }
+
+  .token.punctuation {
+    color: #747994
+  }
+
+  .token.property,
+  .token.tag,
+  .token.boolean,
+  .token.number,
+  .token.constant,
+  .token.symbol,
+  .token.deleted {
+    color: #9f1331
+  }
+
+  .token.selector,
+  .token.attr-name,
+  .token.string,
+  .token.char,
+  .token.builtin,
+  .token.inserted {
+    color: #005f39
+  }
+
+  .token.operator,
+  .token.entity,
+  .token.url,
+  .language-css .token.string,
+  .style .token.string,
+  .token.regex,
+  .token.important,
+  .token.variable {
+    color: #963f00;
+    background: #f3f4fa
+  }
+
+  .token.atrule,
+  .token.attr-value,
+  .token.keyword,
+  .token.function,
+  .token.class-name {
+    color: #3a46cc
+  }
+
+  .line-numbers-rows > span:before {
+    color: #d0d2e0;
+  }
+
+  .line-highlight {
+    background: linear-gradient(to right, rgba(46, 50, 71, .1) 100%, rgba(46, 50, 71, 0));
+  }
+
+  .runnable-err a {
+    color: #4956e3
+  }
+
+  .runnable-err a:hover, .runnable-err a:active, .runnable-err a:focus {
+    color: #2f3ab0
+  }
+
+  .runnable-err .runnable-err-file-path .icon-light {
+    fill: #c5c9fd
+  }
+
   #cypress-theme-toggle {
     border: 1px solid #d0d2e0;
     border-radius: 6px;
@@ -221,7 +308,8 @@ function addStyleEL() {
   [data-cy=specs-list-panel] .border-gray-900 {
       border-color: #e1e3ed!important;
     }
-  [data-cy=specs-list-panel] .force-dark {
+  [data-cy=specs-list-panel] .force-dark,
+  #unified-reporter.force-dark {
       color-scheme: light;
     }
   [data-cy=specs-list-panel] .group:hover .group-hover\\:text-indigo-300 {
