@@ -55,7 +55,7 @@ function addStyleEL() {
     }
 
     .reporter .command-name-assert .command-state-failed .command-message strong {
-      color: #cf0000 !important
+      color: #c62b49 !important
     }
     .reporter .command-wrapper .command-alias.agent,
     .reporter .command-wrapper .command-alias.primitive,
