@@ -315,6 +315,10 @@ function addStyleEL() {
   [data-cy=specs-list-panel] .border-gray-900 {
     border-color: #e1e3ed !important
   }
+  [data-cy=specs-list-panel] .hocus\\:border-indigo-300:hover,
+  [data-cy=specs-list-panel] .hocus\\:border-indigo-300:focus {
+    border-color: #2f3ab0 !important
+  }
   [data-cy=specs-list-panel] .force-dark,
   #unified-reporter.force-dark {
     color-scheme: light;
