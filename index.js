@@ -15,10 +15,13 @@ function addStyleEL() {
     .reporter .container,
     .reporter .runnable-header,
     .reporter .commands-container,
-    .reporter .command-wrapper,
     .reporter .runnable,
     .reporter .testing-preferences-header {
       background-color: #f8f9ff
+    }
+
+    .reporter .command-wrapper {
+      background-color: #fff !important
     }
 
     .reporter header button:hover,
@@ -245,6 +248,12 @@ function addStyleEL() {
 
   .runnable-err .runnable-err-file-path .icon-light {
     fill: #c5c9fd
+  }
+
+  .reporter .runnable .runnable-wrapper .collapsible-header:focus .collapsible-header-inner {
+    background-color: #fff;
+    outline: 1px solid #2f3ab0;  
+    outline-offset: -1px;
   }
 
   #cypress-theme-toggle {
