@@ -31,3 +31,16 @@ setLightTheme()
 npm install
 npx cypress open
 ```
+
+
+## TODO
+
+- [ ] error handling
+- [ ] design tweaks
+- [ ] clean up style sheet getting added & removed?
+- [ ] documentation
+- [ ] finish checking that colors are accessible
+- [ ] use system setting by default
+- [ ] add a way to change this to the settings page
+- [ ] remove the button being injected into the reporter
+- [ ] submit to the [plugins list](https://docs.cypress.io/plugins/directory)
