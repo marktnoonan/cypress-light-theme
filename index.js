@@ -2,6 +2,10 @@ const STYLE_EL_ID = 'light-mode-reporter-styles'
 
 function addStyleEL() {
   removeStyleElIfPresent()
+  const reporterEl = top.document.querySelector('#unified-reporter')
+  if (!reporterEl) {
+    return
+  }
   const styleEl = document.createElement('style')
 
   styleEl.id = STYLE_EL_ID
@@ -392,14 +396,13 @@ function addStyleEL() {
   }
 
   `
-
-  top.document.querySelector('body').appendChild(styleEl)
+  reporterEl.appendChild(styleEl)
 }
 
 function removeStyleElIfPresent() {
-  if (document.getElementById(STYLE_EL_ID)) {
+  if (top.document.getElementById(STYLE_EL_ID)) {
     // to help during development/hot reloading
-    document.getElementById(STYLE_EL_ID).remove()
+    top.document.getElementById(STYLE_EL_ID).remove()
   }
 }
 export default function setLightTheme() {
@@ -430,6 +433,15 @@ will be used as the default. The actual value found was ${envTheme}.`)
 
     // check if system is dark
     const isSystemDark = matchMedia('(prefers-color-scheme: dark)').matches
+
+    const mediaQuery = matchMedia('(prefers-color-scheme: dark)')
+    mediaQuery.addEventListener('change', (event) => {
+      if (event.matches) {
+        removeStyleElIfPresent()
+      } else {
+        addStyleEL()
+      }
+    })
 
     // default to light mode if system is not explicitly dark
     isCypressLight = !isSystemDark
