@@ -252,8 +252,33 @@ function addStyleEL() {
 
   .reporter .runnable .runnable-wrapper .collapsible-header:focus .collapsible-header-inner {
     background-color: #fff;
-    outline: 1px solid #2f3ab0;  
+    outline: 1px solid #2f3ab0;
     outline-offset: -1px;
+  }
+
+  .reporter .attempt-name:before {
+    border-top-color: #e1e3ed
+  }
+
+  .reporter .attempt-name .attempt-tag {
+    background: white;
+    border-color: #e1e3ed
+  }
+
+  .reporter .attempt-name .attempt-tag:hover {
+    background-color: #f3f4fa
+  }
+
+  .reporter .attempt-item > .collapsible:before {
+    border-left-color: #e1e3ed
+  }
+
+  .testing-preferences .testing-preferences-header:before, .testing-preferences .testing-preferences-header:after {
+    background-color: #e1e3ed
+  }
+
+  .reporter .no-tests hr {
+    background-color: #e1e3ed
   }
 
   #cypress-theme-toggle {
