@@ -351,7 +351,9 @@ function addStyleEL() {
 }
 
 export default function setLightTheme() {
-
+  if (document.getElementById(STYLE_EL_ID)) {
+    document.getElementById(STYLE_EL_ID).remove()
+  }
   if (!top.localStorage.getItem("theme")) {
     const preferredTheme = window.matchMedia('(prefers-color-scheme: dark)')
     const isDark = preferredTheme.matches
@@ -359,5 +361,6 @@ export default function setLightTheme() {
       addStyleEL()
       return
     }
+    console.log('config?', Cypress.config())
   } 
 }
