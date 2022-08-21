@@ -387,6 +387,10 @@ function addStyleEL() {
     border-color: #2f3ab0!important
   }
 
+  .reporter ::selection {
+    background-color: #B7E7F0 !important
+  }
+
   `
 
   top.document.querySelector('body').appendChild(styleEl)

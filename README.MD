@@ -40,7 +40,7 @@ npx cypress open
 - [ ] clean up style sheet getting added & removed?
 - [ ] documentation
 - [ ] finish checking that colors are accessible
-- [ ] fix text select color
+- [x] fix text select color
 - [x] use system setting by default
 - [ ] ~~add a way to change this to the settings page~~ (not doing this for v1)
 - [x] remove the button being injected into the reporter
