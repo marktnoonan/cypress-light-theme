@@ -1,6 +1,6 @@
 {
   "name": "cypress-light-theme",
-  "version": "0.1.8",
+  "version": "1.0.0",
   "description": "A light theme for the Cypress App Command Log",
   "main": "index.js",
   "scripts": {
