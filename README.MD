@@ -5,7 +5,7 @@
 
 `cypress-light-theme` adds a **completely unofficial** "light theme" for the Cypress App's Command Log in Cypress v10+, allowing the user to either follow the system preference for light/dark mode or, with an environment variable, to force one or the other to always be set.
 
-Inspired by the [`cypress-dark`](https://npmjs.com/package/cypress-dark) package by @bahmutov for Cypress 9 and below, we wanted to do something quick that did not require official designs for the theme, or for the code changes necessary to support a full theme system. This means that as Cypress changes over time, this light theme may break in unexpected ways. Please create and issue (or a Pull Request ❤️) if something is wrong.
+Inspired by the [`cypress-dark`](https://npmjs.com/package/cypress-dark) package by @bahmutov for Cypress 9 and below, we wanted to do something quick that did not require official designs for the theme, or the code changes necessary to support a full theme system. This means that as Cypress changes over time, this light theme may break in unexpected ways. Please create and issue (or a Pull Request ❤️) if something is wrong.
 
 This package is created and maintained by [@marktnoonan](https://github.com/marktnoonan), [@mapsandapps](https://github.com/mapsandapps), and [@viniciuspietscher](https://github.com/viniciuspietscher).
 
