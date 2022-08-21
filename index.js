@@ -1,7 +1,7 @@
-const STYLE_EL_ID = "light-mode-reporter-styles"
+const STYLE_EL_ID = 'light-mode-reporter-styles'
 
 function addStyleEL() {
-  const styleEl = document.createElement("style")
+  const styleEl = document.createElement('style')
 
   styleEl.id = STYLE_EL_ID
   styleEl.innerHTML = `
@@ -347,20 +347,46 @@ function addStyleEL() {
 
   `
 
-  top.document.querySelector("body").appendChild(styleEl)
+  top.document.querySelector('body').appendChild(styleEl)
 }
 
 export default function setLightTheme() {
   if (document.getElementById(STYLE_EL_ID)) {
+    // to help during development/hot reloading
     document.getElementById(STYLE_EL_ID).remove()
   }
-  if (!top.localStorage.getItem("theme")) {
-    const preferredTheme = window.matchMedia('(prefers-color-scheme: dark)')
-    const isDark = preferredTheme.matches
-    if (!isDark) {
+  // get theme from env var
+  const envTheme = Cypress.env('THEME')
+  let isCypressLight
+
+  if (envTheme === 'dark') {
+    // do not add style el, user explicity chose dark mode
+    return
+  }
+
+  if (envTheme === 'light') {
+    // add it right away, user explicity chose light
+    addStyleEL()
+    return
+  }
+
+  if (envTheme && envTheme !== 'system') {
+    // warn if unexpected value was used
+    console.error(`Cypress System Theme Error: unknown value for env var THEME. \
+Accepted values are \`light\`, \`dark\` and \`system\`. \`system\` \
+will be used as the default. The actual value found was ${envTheme}.`)
+  }
+
+    // use system as the default or when explicitly set
+
+    // check if system is dark
+    const isSystemDark = matchMedia('(prefers-color-scheme: dark)').matches
+
+    // default to light mode if system is not explicitly dark
+    isCypressLight = !isSystemDark
+
+    if (isCypressLight) {
       addStyleEL()
       return
     }
-    console.log('config?', Cypress.config())
-  } 
 }
