@@ -37,7 +37,7 @@ npx cypress open
 
 - [x] error handling
 - [ ] design tweaks
-- [ ] clean up style sheet getting added & removed?
+- [x] clean up style sheet getting added & removed?
 - [ ] documentation
 - [ ] finish checking that colors are accessible
 - [x] fix text select color
