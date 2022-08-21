@@ -422,6 +422,8 @@ export default function setLightTheme() {
     return
   }
 
+  // we will use `system` as the default or when explicitly set
+
   if (envTheme && envTheme !== 'system') {
     // warn if unexpected value was used
     console.error(`Cypress System Theme Error: unknown value for env var THEME. \
@@ -429,24 +431,22 @@ Accepted values are \`light\`, \`dark\` and \`system\`. \`system\` \
 will be used as the default. The actual value found was ${envTheme}.`)
   }
 
-    // use system as the default or when explicitly set
+  const prefersDarkMediaQuery = matchMedia('(prefers-color-scheme: dark)')
 
-    // check if system is dark
-    const isSystemDark = matchMedia('(prefers-color-scheme: dark)').matches
+  // default to light mode if system is not explicitly dark
+  isCypressLight = !prefersDarkMediaQuery.matches
 
-    const mediaQuery = matchMedia('(prefers-color-scheme: dark)')
-    mediaQuery.addEventListener('change', (event) => {
-      if (event.matches) {
-        removeStyleElIfPresent()
-      } else {
-        addStyleEL()
-      }
-    })
+  if (isCypressLight) {
+    addStyleEL()
+  }
 
-    // default to light mode if system is not explicitly dark
-    isCypressLight = !isSystemDark
-
-    if (isCypressLight) {
+  // add a listener to react to changes - this is safe to add
+  // since we have returned already if the theme is explicitly set.
+  prefersDarkMediaQuery.addEventListener('change', (event) => {
+    if (event.matches) {
+      removeStyleElIfPresent()
+    } else {
       addStyleEL()
     }
+  })
 }
