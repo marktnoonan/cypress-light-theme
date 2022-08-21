@@ -363,7 +363,7 @@ export default function setLightTheme(isLight = undefined) {
 
   if (
     isLight ||
-    (isLight === undefined && !top?.localStorage.getItem("theme"))
+    (isLight === undefined && !top.localStorage.getItem("theme"))
   ) {
     top.localStorage.setItem("theme", "light")
   } else if (isLight === false) {
