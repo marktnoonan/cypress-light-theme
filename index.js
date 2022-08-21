@@ -350,31 +350,14 @@ function addStyleEL() {
   top.document.querySelector("body").appendChild(styleEl)
 }
 
-export default function setLightTheme(isLight = undefined) {
-  if (!top.document.getElementById("cypress-theme-toggle")) {
-    const button = document.createElement("button")
-    button.id = "cypress-theme-toggle"
+export default function setLightTheme() {
 
-    button.addEventListener("click", () =>
-      setLightTheme(top.localStorage.getItem("theme") === "dark")
-    )
-    top.document.querySelector(".reporter .spacer").appendChild(button)
-  }
-
-  if (
-    isLight ||
-    (isLight === undefined && !top.localStorage.getItem("theme"))
-  ) {
-    top.localStorage.setItem("theme", "light")
-  } else if (isLight === false) {
-    top.localStorage.setItem("theme", "dark")
-  }
-
-  if (top.localStorage.getItem("theme") === "light") {
-    addStyleEL()
-    top.document.getElementById("cypress-theme-toggle").innerText = "Dark"
-  } else if (top.document.getElementById(STYLE_EL_ID)) {
-    top.document.getElementById(STYLE_EL_ID).remove()
-    top.document.getElementById("cypress-theme-toggle").innerText = "Light"
-  }
+  if (!top.localStorage.getItem("theme")) {
+    const preferredTheme = window.matchMedia('(prefers-color-scheme: dark)')
+    const isDark = preferredTheme.matches
+    if (!isDark) {
+      addStyleEL()
+      return
+    }
+  } 
 }
