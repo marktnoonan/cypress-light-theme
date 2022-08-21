@@ -1,6 +1,7 @@
 const STYLE_EL_ID = 'light-mode-reporter-styles'
 
 function addStyleEL() {
+  removeStyleElIfPresent()
   const styleEl = document.createElement('style')
 
   styleEl.id = STYLE_EL_ID
@@ -375,11 +376,14 @@ function addStyleEL() {
   top.document.querySelector('body').appendChild(styleEl)
 }
 
-export default function setLightTheme() {
+function removeStyleElIfPresent() {
   if (document.getElementById(STYLE_EL_ID)) {
     // to help during development/hot reloading
     document.getElementById(STYLE_EL_ID).remove()
   }
+}
+export default function setLightTheme() {
+  removeStyleElIfPresent()
   // get theme from env var
   const envTheme = Cypress.env('THEME')
   let isCypressLight
@@ -412,6 +416,5 @@ will be used as the default. The actual value found was ${envTheme}.`)
 
     if (isCypressLight) {
       addStyleEL()
-      return
     }
 }
