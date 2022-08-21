@@ -16,7 +16,7 @@ npm add --save-dev cypress-light-theme
 yarn add --dev cypress-light-theme
 ```
 
-in `cypress/support/e2e.js`,
+in `cypress/support/e2e.js` (for e2e tests) and/or `cypress/support/component.js` (for component tests),
 
 ```js
 import setLightTheme from 'cypress-light-theme'
