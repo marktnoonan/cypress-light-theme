@@ -35,7 +35,7 @@ function addStyleEL() {
     }
 
     .reporter .no-tests {
-      background-color: #f3f4fa
+      background-color: #f8f9ff
     }
 
     .reporter .wrap {
@@ -280,6 +280,22 @@ function addStyleEL() {
 
   .reporter .no-tests hr {
     background-color: #e1e3ed
+  }
+
+  .reporter *:not(button):not([class*=command-state]):not(.runnable-err):not(.test-err-code-frame *) .no-tests a {
+    color: #3a46cc
+  }
+
+  .reporter *:not(button):not([class*=command-state]):not(.runnable-err):not(.test-err-code-frame *) .no-tests a h3 {
+    color: currentColor
+  }
+
+  .reporter *:not(button):not([class*=command-state]):not(.runnable-err):not(.test-err-code-frame *) .no-tests h2 {
+    color: #c62b49
+  }
+
+  .reporter *:not(button):not([class*=command-state]):not(.runnable-err):not(.test-err-code-frame *) .no-tests h2 svg path {
+    fill: #c62b49
   }
 
   #cypress-theme-toggle {
